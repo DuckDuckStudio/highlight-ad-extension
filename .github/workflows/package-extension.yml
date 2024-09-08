@@ -15,15 +15,12 @@ jobs:
 
     steps:
       - name: 检出代码
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 设置 Node.js 环境
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 'latest'
-
-      - name: 安装依赖
-        run: npm install
 
       - name: 读取当前版本
         id: get_version
