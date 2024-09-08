@@ -1,0 +1,56 @@
+name: 打包扩展
+
+on:
+  push:
+    branches:
+      - main
+      - test-auto-pack
+    paths:
+      - 'EXTENSION/manifest.json'
+
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+
+      - name: 设置 Node.js 环境
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'latest'
+
+      - name: 安装依赖
+        run: npm install
+
+      - name: 读取当前版本
+        id: get_version
+        run: |
+          VERSION=$(jq -r '.version' EXTENSION/manifest.json)
+          echo "[INFO] 当前版本: $VERSION"
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: 比较版本
+        id: compare_versions
+        run: |
+          # 从 Git 历史中获取之前的版本
+          PREV_VERSION=$(git show HEAD~1:EXTENSION/manifest.json | jq -r '.version')
+          echo "[INFO] 之前的版本: $PREV_VERSION"
+          
+          if [ "$VERSION" != "$PREV_VERSION" ]; then
+            echo "[INFO] 版本已变化，正在打包扩展..."
+            zip -r EXTENSION.zip EXTENSION
+            echo "[INFO] 打包完成。"
+            echo "CHANGE=true" >> $GITHUB_ENV
+          else
+            echo "[WARN] 版本没有变化。"
+            echo "CHANGE=false" >> $GITHUB_ENV
+          fi
+
+      - name: 上传打包文件
+        if: env.CHANGE == 'true'
+        uses: actions/upload-artifact@v3
+        with:
+          name: extension-zip
+          path: EXTENSION.zip
