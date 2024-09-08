@@ -7,6 +7,7 @@ on:
       - test-auto-pack
     paths:
       - 'EXTENSION/manifest.json'
+  workflow_dispatch:
 
 jobs:
   check-version:
@@ -34,18 +35,25 @@ jobs:
       - name: 比较版本
         id: compare_versions
         run: |
-          # 从 Git 历史中获取之前的版本
-          PREV_VERSION=$(git show HEAD~1:EXTENSION/manifest.json | jq -r '.version')
-          echo "[INFO] 之前的版本: $PREV_VERSION"
-          
-          if [ "$VERSION" != "$PREV_VERSION" ]; then
-            echo "[INFO] 版本已变化，正在打包扩展..."
-            zip -r EXTENSION.zip EXTENSION
-            echo "[INFO] 打包完成。"
-            echo "CHANGE=true" >> $GITHUB_ENV
+          # 仅在 push 事件中执行版本检查
+          if [ "${{ github.event_name }}" == "push" ]; then
+            PREV_VERSION=$(git show HEAD~1:EXTENSION/manifest.json | jq -r '.version')
+            echo "[INFO] 之前的版本: $PREV_VERSION"
+            
+            if [ "$VERSION" != "$PREV_VERSION" ]; then
+              echo "[INFO] 版本已变化，正在打包扩展..."
+              zip -r EXTENSION.zip EXTENSION
+              echo "[INFO] 打包完成。"
+              echo "CHANGE=true" >> $GITHUB_ENV
+            else
+              echo "[WARN] 版本没有变化。"
+              echo "CHANGE=false" >> $GITHUB_ENV
+            fi
           else
-            echo "[WARN] 版本没有变化。"
-            echo "CHANGE=false" >> $GITHUB_ENV
+            # 手动触发时跳过版本检查
+            echo "[INFO] 手动触发，跳过版本检查。"
+            zip -r EXTENSION.zip EXTENSION
+            echo "CHANGE=true" >> $GITHUB_ENV
           fi
 
       - name: 上传打包文件
