@@ -43,7 +43,8 @@ git clone https://github.com/DuckDuckStudio/highlight-ad-extension.git
 ![工作流界面示例](Assets/image/code/pack_workflows.png)
 3. 下载工作流构建文件 (`Summary` -划到最下面-> `Artifacts`)
 ![构建文件界面示例](Assets/image/code/Artifacts.png)
-4. 在浏览器中加载扩展
+4. 解压扩展
+5. 在浏览器中加载扩展
 
 ## 局限性
 - 本扩展只能高亮`广告`，而不能高亮`广 告`/`AD`/`推广`等。  
