@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
   "name": "高亮“广告”",
-  "version": "1.0.2",
+  "version": "1.0.1",
+  "locale": "zh-CN",
   "description": "在指定的网址上高亮“广告”二字",
   "icons": {
     "128": "icons/hade128x128.png"

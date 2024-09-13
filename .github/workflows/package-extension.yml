@@ -4,13 +4,12 @@ on:
   push:
     branches:
       - main
-      - test-auto-pack
     paths:
       - 'EXTENSION/manifest.json'
   workflow_dispatch:
 
 jobs:
-  check-version:
+  package-extension:
     runs-on: ubuntu-latest
 
     steps:
@@ -54,8 +53,9 @@ jobs:
           fi
 
       - name: 上传打包文件
+        # 在Summary页最下方
         if: env.CHANGE == 'true'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: extension-zip
           path: EXTENSION.zip

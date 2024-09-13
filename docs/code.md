@@ -1,9 +1,7 @@
 # 高亮“广告”扩展 | 代码文档
 
-## 实现原理
-$$
-找到“广告”二字 \rightarrow 为“广告”二字套上<span>
-$$
+## 基本原理
+找到“广告”二字 → 为“广告”二字套上`<span>`  
 更多步骤请查看代码注释。  
 
 ## 代码架构
@@ -25,22 +23,33 @@ $$
 - README.md → 同`docs`中的README.md，也就是文档的主页
 
 ## 在本地加载
+### 从仓库文件加载
 1. 克隆仓库
 ```bash
 git clone https://github.com/DuckDuckStudio/highlight-ad-extension.git
 ```
-2. 在Edge中打开扩展页(`edge://extensions/`)
+2. 在Edge中打开扩展页(edge://extensions/)
 3. 打开 **开发人员模式**  
    ![扩展页面侧边栏](Assets/image/code/open_dev_mod.png)
 4. 加载扩展  
    ![加载解压缩的扩展](Assets/image/code/import_extension.png)
-5. 打开支持的页面并测试效果  
+5. 选中仓库目录下的`EXTENSION`目录
+6. 打开支持的页面并测试效果  
    [打开必应(国内版)](https://cn.bing.com/)
+
+### 从工作流构建文件加载
+1. 访问[工作流界面](https://github.com/DuckDuckStudio/highlight-ad-extension/actions/workflows/package-extension.yml)
+2. 点击最新的运行 (即使最新的运行不叫`打包扩展`)  
+![工作流界面示例](Assets/image/code/pack_workflows.png)
+3. 下载工作流构建文件 (`Summary` -划到最下面-> `Artifacts`)
+![构建文件界面示例](Assets/image/code/Artifacts.png)
+4. 解压扩展
+5. 在浏览器中加载扩展
 
 ## 局限性
 - 本扩展只能高亮`广告`，而不能高亮`广 告`/`AD`/`推广`等。  
 - 本扩展不能高亮一些类型的`广告`，只能高亮`Ctrl`+`F`可以搜到的`广告`。  
-- 本扩展只在经过验证的页面上可以使用，因为未经验证的页面使用情况未知。具体验证过哪些页面可以在`manifest.json`中查看`content_scripts > matches`键的值。  
+- 本扩展建议只在经过验证的页面上可以使用，因为未经验证的页面使用情况未知。具体验证过哪些页面可以在`manifest.json`中查看`content_scripts > matches`键的值。  
 
 ## 在本地使用 docsify 部署文档
 [官方文档](https://docsify.js.org/#/zh-cn/quickstart)  
