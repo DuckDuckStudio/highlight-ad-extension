@@ -9,4 +9,10 @@
 ![https://cn.bing.com/](Assets/image/effect/bing(cn).png)
 
 ## 百度
-![1724770194309](Assets/image/effect/baidu.png)
+![https://cn.bing.com/](Assets/image/effect/baidu.png)
+
+## 360搜索
+![https://www.so.com/](Assets/image/effect/360.png)
+
+## 搜狗
+![https://www.sogou.com/](Assets/image/effect/sogou.png)

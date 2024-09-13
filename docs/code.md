@@ -49,7 +49,8 @@ git clone https://github.com/DuckDuckStudio/highlight-ad-extension.git
 ## 局限性
 - 本扩展只能高亮`广告`，而不能高亮`广 告`/`AD`/`推广`等。  
 - 本扩展不能高亮一些类型的`广告`，只能高亮`Ctrl`+`F`可以搜到的`广告`。  
-- 本扩展建议只在经过验证的页面上可以使用，因为未经验证的页面使用情况未知。具体验证过哪些页面可以在`manifest.json`中查看`content_scripts > matches`键的值。  
+- 本扩展建议只在经过验证的页面上可以使用，因为未经验证的页面使用情况未知。具体验证过哪些页面可以在`manifest.json`中查看`content_scripts > matches`键的值。
+- 本扩展虽然会实时检测页面更改调整高亮内容，但具有一定延迟(详见`content.js`中的注释，默认延迟为`600`毫秒，不延迟会直接把网站搞崩...)  
 
 ## 在本地使用 docsify 部署文档
 [官方文档](https://docsify.js.org/#/zh-cn/quickstart)  
