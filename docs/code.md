@@ -7,6 +7,12 @@
 ## 代码架构
 这里以GitHub仓库的架构为例
 
+- .github → GitHub上的配置
+  - workflows → GitHub Action
+    - package-community-extension.yml → 自动打包社区扩展
+    - package-extension.yml → 自动打包主扩展
+- Community → 社区扩展文件
+  - ...
 - docs → 你现在正在看的这些文档
   - ... → Note: 使用 [docsify](https://docsify.js.org/#/) 部署
 - EXENSION → 扩展目录

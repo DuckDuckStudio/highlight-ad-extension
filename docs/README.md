@@ -1,4 +1,7 @@
 # 高亮“广告”扩展 | README
+
+[![打包扩展](https://github.com/DuckDuckStudio/highlight-ad-extension/actions/workflows/package-extension.yml/badge.svg)](https://github.com/DuckDuckStudio/highlight-ad-extension/actions/workflows/package-extension.yml) | [![Pack Community Extension](https://github.com/DuckDuckStudio/highlight-ad-extension/actions/workflows/package-community-extension.yml/badge.svg)](https://github.com/DuckDuckStudio/highlight-ad-extension/actions/workflows/package-community-extension.yml)  
+
 这是一个帮你在一些地方**高亮“广告”二字**的浏览器扩展，效果请见[【高亮“广告”扩展 | 效果展示】](https://duckduckstudio.github.io/highlight-ad-extension/#/effect)
 
 ## 如何获取

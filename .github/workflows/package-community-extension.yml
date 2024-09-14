@@ -1,0 +1,55 @@
+name: Pack Community Extension
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Community/**/manifest.json'
+  workflow_dispatch:
+
+jobs:
+  package-community-extension:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Node.js 环境
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+
+      - name: 安装必需的工具
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y zip jq
+
+      - name: 获取扩展目录列表
+        id: get_directories
+        run: |
+          # 获取所有扩展的目录
+          tree Community
+          EXT_DIRS=$(find Community -type f -name 'manifest.json' -exec dirname {} \; | sort -u)
+          echo "EXT_DIRS=$EXT_DIRS" >> $GITHUB_ENV
+
+      - name: 打包扩展
+        run: |
+          # 遍历扩展目录并打包
+          for dir in $EXT_DIRS; do
+            echo "Processing $dir"
+            # 获取扩展的版本号
+            VERSION=$(jq -r '.version' "$dir/manifest.json")
+            echo "[Community Extension] $dir Version: $VERSION"
+            # 创建一个 zip 包
+            zip -r "$dir.zip" "$dir"
+          done
+          # 验证
+          tree
+
+      - name: 上传打包文件
+        uses: actions/upload-artifact@v4
+        with:
+          name: Community Extensions
+          path: Community/**/*.zip
