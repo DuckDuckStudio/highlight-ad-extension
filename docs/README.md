@@ -10,3 +10,4 @@
 ## 相关文档页面
 - [效果展示](https://duckduckstudio.github.io/highlight-ad-extension/#/effect)
 - [代码文档](https://duckduckstudio.github.io/highlight-ad-extension/#/code)
+- [社区文档](https://duckduckstudio.github.io/highlight-ad-extension/#/community)
