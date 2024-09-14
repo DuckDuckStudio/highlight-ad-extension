@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- 弹出页 -->
+<html>
+    <head>
+        <title>高亮广告</title>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+        <style>
+            body {
+                width: 200px;
+                padding: 10px;
+                background-color: #f5deb3;
+            }
+
+            label {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+
+            img,p,em,i {
+                max-width: 100%;
+            }
+
+            /* 增大复选框大小 */
+            input[type="checkbox"] {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+
+            /* --- 折叠与展开 --- */
+            summary {
+                cursor: pointer;
+                outline: none;
+                padding: 10px;
+                background-color: #f0f0f0;
+                border: 1px solid #ccc;
+            }
+
+            details[open] summary {
+                background-color: #ddd;
+            }
+            /* ------ */
+        </style>
+
+        <!-- 芙芙工具箱网页通用样式 by鸭鸭「カモ」 -->
+        <link rel="stylesheet" href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/css/universal.css">
+    </head>
+    <body>
+        <label>
+            <input type="checkbox" id="toggleHighlight"><span style="font-size: 17px;">启用高亮<br>(刷新页面查看效果)</span>
+        </label>
+
+        <hr />
+        <div class="center-text">
+            <a href="https://duckduckstudio.github.io/yazicbs.github.io/">前往作者个人网站</a>
+            &nbsp;|&nbsp;
+            <a href="https://github.com/DuckDuckStudio/highlight-ad-extension/issues">提交反馈</a>
+        </div>
+
+        <script src="popup.js"></script>
+    </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>高亮“广告”扩展 | 选项</title>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+        <style>
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            body {
+                background-color: #f5deb3;
+            }
+
+            .container {
+                background-color: rgba(255, 255, 255, 0.7); /* 亚克力效果垫底 */
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+
+            img,p,em,i {
+                max-width: 100%;
+            }
+
+            /* --- 折叠与展开 --- */
+            summary {
+                cursor: pointer;
+                outline: none;
+                padding: 10px;
+                background-color: #f0f0f0;
+                border: 1px solid #ccc;
+            }
+
+            details[open] summary {
+                background-color: #ddd;
+            }
+            /* ------ */
+
+            /* 主要标题 */
+            h1 {
+            font-size: 2.5rem; /* 大标题 */
+            font-weight: bold; /* 加粗 */
+            margin-bottom: 0.5em; /* 下方间距 */
+            }
+
+            /* 副标题 */
+            h2 {
+            font-size: 2rem; /* 副标题 */
+            font-weight: bold;
+            margin-bottom: 0.5em;
+            }
+
+            /* 正文段落 */
+            p {
+            font-size: 1rem; /* 正文字体大小 */
+            line-height: 1.5; /* 行高 */
+            margin-bottom: 1em; /* 下方间距 */
+            }
+
+            /* 标签 */
+            label {
+            font-size: 1rem; /* 标签字体大小 */
+            font-weight: normal; /* 标签通常不加粗 */
+            }
+
+            /* 强调文本 */
+            em {
+            font-size: 1rem; /* 强调文本字体大小 */
+            font-style: italic; /* 斜体 */
+            }
+        </style>
+
+        <!-- 芙芙工具箱网页通用样式 by鸭鸭「カモ」 -->
+        <link rel="stylesheet" href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/css/universal.css">
+    </head>
+    <body>
+        <div class="container" style="margin-top: 30px; margin-right: 30px; margin-left: 30px;">
+            <div class="center-text">
+                <h1>扩展选项</h1>
+                <p><em>高亮“广告”扩展 | Version 1.0.0 | Edge</em></p>
+            </div>
+            <label>
+                <input type="checkbox" id="toggleHighlight"> 启用高亮
+            </label>
+            <p>警告：这是一个预留页面，不建议在这里设置。</p>
+            <script src="popup.js"></script>
+        </div>
+        <div class="container" style="margin-bottom: 30px; margin-right: 30px; margin-left: 30px;">
+            <div class="right-text">
+                <p>
+                    <a href="https://duckduckstudio.github.io/yazicbs.github.io/">前往作者个人网站</a>
+                    &nbsp;|&nbsp;
+                    <a href="https://github.com/DuckDuckStudio/highlight-ad-extension/issues">提交反馈</a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
