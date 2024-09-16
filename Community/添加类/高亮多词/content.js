@@ -6,6 +6,7 @@ const globalHighlightWords = ['广告'];
 // 高亮词配置
 const highlightConfig = {
   'www.zhihu.com': ['盐选'],
+  'space.bilibili.com': ['公开收藏夹']
 };
 
 function getHighlightWords() {

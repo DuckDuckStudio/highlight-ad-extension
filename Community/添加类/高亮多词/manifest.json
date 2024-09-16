@@ -22,7 +22,8 @@
         "https://www.baidu.com/*",
         "https://www.so.com/*",
         "https://www.sogou.com/*",
-        "https://www.zhihu.com/*"
+        "https://www.zhihu.com/*",
+        "https://space.bilibili.com/*"
       ], 
       "js": ["content.js"],
       "css": ["styles.css"],
