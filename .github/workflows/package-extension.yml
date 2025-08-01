@@ -15,11 +15,8 @@ jobs:
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
-
-      - name: 设置 Node.js 环境
-        uses: actions/setup-node@v4
         with:
-          node-version: 'latest'
+          fetch-depth: 2 # 最少要求
 
       - name: 读取当前版本
         id: get_version
@@ -50,7 +47,6 @@ jobs:
           fi
 
       - name: 上传打包文件
-        # 在Summary页最下方
         if: env.CHANGE == 'true'
         uses: actions/upload-artifact@v4
         with:
