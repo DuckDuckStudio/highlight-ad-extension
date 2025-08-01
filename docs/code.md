@@ -34,14 +34,14 @@
 ```bash
 git clone https://github.com/DuckDuckStudio/highlight-ad-extension.git
 ```
-2. 在Edge中打开扩展页(edge://extensions/)
+2. 在Edge中打开[扩展页](edge://extensions/)
 3. 打开 **开发人员模式**  
    ![扩展页面侧边栏](Assets/image/code/open_dev_mod.png)
 4. 加载扩展  
    ![加载解压缩的扩展](Assets/image/code/import_extension.png)
 5. 选中仓库目录下的`EXTENSION`目录
 6. 打开支持的页面并测试效果  
-   [打开必应(国内版)](https://cn.bing.com/)
+   例如 [打开百度](https://www.baidu.com/)，然后搜索广告重灾区`Python`。为了显示广告，请关闭广告拦截插件。
 
 ### 从工作流构建文件加载
 1. 访问[工作流界面](https://github.com/DuckDuckStudio/highlight-ad-extension/actions/workflows/package-extension.yml)
@@ -53,9 +53,9 @@ git clone https://github.com/DuckDuckStudio/highlight-ad-extension.git
 5. 在浏览器中加载扩展
 
 ## 局限性
-- 本扩展只能高亮`广告`，而不能高亮`广 告`/`AD`/`推广`等。  
+- 本扩展默认只高亮`广告`，而不高亮`广 告`/`AD`/`推广`等。如有需要可在`content.js`里自己加。  
 - 本扩展不能高亮一些类型的`广告`，只能高亮`Ctrl`+`F`可以搜到的`广告`。  
-- 本扩展建议只在经过验证的页面上可以使用，因为未经验证的页面使用情况未知。具体验证过哪些页面可以在`manifest.json`中查看`content_scripts > matches`键的值。
+- 本扩展建议只在经过验证的页面上使用，因为未经验证的页面使用情况未知。具体验证过哪些页面可以在`manifest.json`中查看`content_scripts > matches`键的值。
 - 本扩展虽然会实时检测页面更改调整高亮内容，但具有一定延迟(详见`content.js`中的注释，默认延迟为`600`毫秒，不延迟会直接把网站搞崩...)  
 
 ## 在本地使用 docsify 部署文档
@@ -110,9 +110,9 @@ Listening at http://localhost:3000 ← 页面位置
 ```
 
 > [!NOTE]
-> 你的修改必须符合JSON规范与扩展清单规范。  
-> JSON不允许注释与尾随逗号。  
+> 你的修改必须符合 JSON 规范与扩展清单规范。  
+> JSON 不允许注释与尾随逗号。  
 > 清单版本为 V3 。  
 
 ## 项目许可证
-本项目基于 [MIT](https://github.com/DuckDuckStudio/highlight-ad-extension/blob/main/LICENSE) 许可证开源，以最新开源许可证为准。  
+本项目基于 [MIT](https://github.com/DuckDuckStudio/highlight-ad-extension/blob/main/LICENSE) 许可证开源。  

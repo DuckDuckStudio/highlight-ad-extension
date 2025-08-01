@@ -6,7 +6,9 @@
 > 所有搜索内容为随机，无特殊意思。搜索结果截图仅代表文档编写时的情况，不代表所有时段的情况。  
 
 ## 必应(国内版)
-![https://cn.bing.com/](Assets/image/effect/bing(cn).png)
+![https://cn.bing.com/](Assets/image/effect/bing(cn).png)  
+
+> 此处为旧版截图，新版必应广告见 [#7](https://github.com/DuckDuckStudio/highlight-ad-extension/issues/7)。  
 
 ## 百度
 ![https://cn.bing.com/](Assets/image/effect/baidu.png)
