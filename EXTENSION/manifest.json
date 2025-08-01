@@ -18,7 +18,6 @@
   "content_scripts": [
     {
       "matches": [
-        "https://cn.bing.com/*",
         "https://www.baidu.com/*",
         "https://www.so.com/*",
         "https://www.sogou.com/*"
