@@ -1,10 +1,10 @@
 // 顶级高亮词
-const globalHighlightWords = ['广告'];
+const globalHighlightWords = ["广告"];
 
 // 高亮词配置
 const highlightConfig = {
-  'www.zhihu.com': ['盐选'],
-  'space.bilibili.com': ['公开收藏夹']
+  "www.zhihu.com": ["盐选"],
+  "space.bilibili.com": ["公开收藏夹"]
 };
 
 function getHighlightWords() {
@@ -27,7 +27,7 @@ function highlightAds() {
    */
   function highlightText(node) {
     let text = node.textContent;
-    const regExp = new RegExp(`(${highlightWords.join('|')})`, "gi");
+    const regExp = new RegExp(`(${highlightWords.join("|")})`, "gi");
     const newHTML = text.replace(regExp, "<span class=\"highlight\">\$1</span>");
 
     if (newHTML !== text) {
